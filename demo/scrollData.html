@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>数字滚动插件</title>
+<meta charset="utf-8">
+<script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="../scrollData.js"></script>
+<style>
+/*数字滚动插件的CSS可调整样式*/
+.mt-number-animate{ font-family: '微软雅黑'; line-height:40px; height: 40px;/*设置数字显示高度*/; font-size: 36px;/*设置数字大小*/ overflow: hidden; display: inline-block; position: relative; }
+.mt-number-animate .mt-number-animate-dot{ width: 15px;/*设置分割符宽度*/ line-height: 40px; float: left; text-align: center;}
+.mt-number-animate .mt-number-animate-dom{ width: 20px;/*设置单个数字宽度*/ text-align: center; float: left; position: relative; top: 0;}
+.mt-number-animate .mt-number-animate-dom .mt-number-animate-span{ width: 100%; float: left;}
+</style>
+</head>
+<body>
+<br><br>
+有分隔符，有小数点：<div class="numberRun"></div> <br><br>
+只有分隔符：<div class="numberRun2"></div> <br><br>
+只有小数点：<div class="numberRun3"></div> <br><br>
+无分隔符，无小数点：<div class="numberRun4"></div>
+  
+</body>
+<script>
+$(function(){
+  
+  //初始化
+  var numRun = $(".numberRun").numberAnimate({num:'15343242.10', dot:2, speed:2000, symbol:","});
+  var nums = 15343242.10;
+  setInterval(function(){
+    nums+= 3433.24;
+    numRun.resetData(nums);
+  },3000);
+  
+  
+  var numRun2 = $(".numberRun2").numberAnimate({num:'15343242', speed:2000, symbol:","});
+  var nums2 = 15343242;
+  setInterval(function(){
+    nums2+= 1433;
+    numRun2.resetData(nums2);
+  },2000);
+  
+  
+  var numRun3 = $(".numberRun3").numberAnimate({num:'52353434.343', dot:3, speed:2000});
+  var nums3 = 52353434.343;
+  setInterval(function(){
+    nums3+= 454.521;
+    numRun3.resetData(nums3);
+  },4000);
+  
+  var numRun4 = $(".numberRun4").numberAnimate({num:'52353434', speed:2000});
+  var nums4 = 52353434;
+  setInterval(function(){
+    nums4+= 123454;
+    numRun4.resetData(nums4);
+  },3500);
+  
+});
+</script>
+</html>

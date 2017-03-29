@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>百分比增加插件</title>
+<meta charset="utf-8">
+<script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="../animationCounter.js"></script>
+<style>
+.baifenbinun{display: block;margin-top:20px;color:#333;font-size:30px;}
+</style>
+</head>
+<body>
+<div class="baifenbinun"><span id="loadingDatabfb">80</span></div>
+<br/><br/><br/>
+<div class="baifenbinun"><span id="money">80</span></div>
+  
+</body>
+<script>
+      $('#loadingDatabfb').animationCounter({
+        start: 1,
+        step: 1,
+        end: 100,
+        delay:100
+      })
+      $('#money').animationCounter({
+        start: 1,
+        step: 1,
+        end:null,
+        delay:1000,
+        txt:"￥"
+      })
+</script>
+</html>
